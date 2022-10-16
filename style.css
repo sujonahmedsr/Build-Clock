@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100%;
+}
+
+h2{
+    text-align: center;
+    padding-top: 20px;
+    text-decoration: underline;
+}
+
+.center{
+    height: 90vh;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock{
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background-color: aqua;
+    border: 0.5px solid red;
+    box-shadow: 0 0 10px 5px gray;
+    position: relative;
+}
+
+.clock::before{
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: blue;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.number div{
+    position: absolute;
+    inset: 20px;
+    text-align: center;
+    transform: rotate(calc(30deg*var(--i)));
+}
+
+.number div b{
+    font-size: 27px;
+    color: #f80292;
+    font-weight: bold;
+    display: inline-block;
+    transform: rotate(calc(-30deg*var(--i)));
+}
+
+.clock .hand{
+    position: absolute;
+    width: 8px;
+    height: 40%;
+    background-color: brown;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translate(-50%);
+}
+
+.clock .second{
+    width: 3px;
+    height: 42%;
+    background-color: #202501;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.clock .minute{
+    width: 6px;
+    height: 39%;
+    background-color: #eeff02;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.clock .hour{
+    width: 8px;
+    height: 35%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #f80292;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .clock{
+        width: 350px;
+        height: 350px;
+
+        
+    }
+    .number div{
+        inset: 6px;
+    }
+}
